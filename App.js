@@ -167,11 +167,13 @@ export default function App() {
           <TouchableOpacity style={styles.button} onPress={() => handleNumber('.')}>
             <Text style={styles.buttonText}>.</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={calculate}>
-            <Text style={styles.operationText}>=</Text>
+          <TouchableOpacity style={[styles.button, styles.equalButton]} onPress={calculate}>
+            <Text style={styles.equalButtonText}>=</Text>
           </TouchableOpacity>
         </View>
       </View>
+
+      <Text style={styles.creditText}>calc by siddesh</Text>
 
       <Modal
         visible={showHistory}
@@ -277,6 +279,21 @@ const styles = StyleSheet.create({
   utilityText: {
     fontSize: 20,
     color: '#495057',
+  },
+  equalButton: {
+    backgroundColor: '#40c057',
+  },
+  equalButtonText: {
+    fontSize: 28,
+    color: 'white',
+    fontWeight: '600',
+  },
+  creditText: {
+    textAlign: 'center',
+    color: '#868e96',
+    fontSize: 14,
+    paddingBottom: 10,
+    fontStyle: 'italic',
   },
   modalOverlay: {
     flex: 1,
